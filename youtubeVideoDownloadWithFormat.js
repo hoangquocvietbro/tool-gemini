@@ -37,7 +37,7 @@ async function downloadYouTubeVideo(url,format, outputPath) {
   try {
     const info = await ytdl.getInfo(url, { agent });
     const videoTitle = info.videoDetails.title;
-    const videoReadableStream = ytdl(url, { format }, { agent });
+    const videoReadableStream = ytdl(url, { format });
 
     let fileWritableStream = fs.createWriteStream(outputPath);
     videoReadableStream.pipe(fileWritableStream)
