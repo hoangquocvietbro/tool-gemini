@@ -12,14 +12,9 @@ const rl = readline.createInterface({
 });
 // (Optional) http-cookie-agent / undici agent options
 // Below are examples, NOT the recommended options
-const agentOptions = {
-  pipelining: 5,
-  maxRedirections: 0,
-  localAddress: "127.0.0.1",
-};
 
 // agent should be created once if you don't want to change your cookie
-const agent = ytdl.createAgent(cookies, agentOptions);
+const agent = ytdl.createAgent(cookies);
 console.log(agent)
 async function listFormats(url,qualityLabel) {
   try {
