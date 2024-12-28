@@ -1,0 +1,46 @@
+_________________Lấy phân cảnh
+**Nhiệm vụ:** Dựa vào video đã giửi trên hãy Xác định các mốc thời gian khi video chuyển sang hình ảnh hoàn toàn mới
+
+**Đầu ra:** Danh sách các mốc thời gian theo định dạng sau:
+
+```
+start time( minute:second,milisecond )|end time( minute:second,milisecond )
+```
+
+**Ví dụ:**
+
+```
+00:00,000|00:01,234
+00:01,234|00:02,768
+00:02,768|00:03,233
+00:03,233|00:04,541
+```
+
+**Ghi chú:**
+* "start time" là thời điểm bắt đầu của một hình ảnh mới.
+* "end time" là thời điểm kết thúc của hình ảnh đó.
+* Phải đầy đủ chi tiết từng khung hình trong từng giây
+* Độ chính xác cao
+* Lấy *tất cả 100%* các khung hình chuyển cảnh. Bám sát theo video không được bỏ qua cảnh  
+
+_________________Lấy phân cảnh chi tiết hơn
+
+Dựa vào video đã gửi hãy chỉnh sửa thời gian chính xác và bổ xung thêm các mốc thời gian phân cảnh thay đổi cho danh sách sau:
+"+SubText+"
+** Định dạng trả về giống  với format đã gửi:**
+
+start time( minute:second,milisecond )|end time( minute:second,milisecond )
+
+** Chú ý **
+ * càng về cuối video càng cần chi tiết nhiều phân cảnh.
+_________________Send video and danh sách phân cảnh để tạo sub
+
+Dựa vào các phân cảnh trong video đã gửi trên và các yêu cầu ở dưới hãy sửa lại và hoàn thiện nội dung sub sau: 
+"+SubText+"
+**Chú ý**
+
+ *Không được bỏ bớt phân cảnh chỉ được sủa lại đúng thời gian,sửa lại nội dung và sửa lại chính tả. 
+ * Đồng bộ chính xác lời sub với thời gian trả lại 
+ * Bổ xung nội dung vào các dòng trống sub. 
+ * Thêm các phân cảnh còn thiếu 
+ * Sửa lại tất cả tên riêng theo video
