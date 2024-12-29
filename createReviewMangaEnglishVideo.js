@@ -32,9 +32,11 @@ const args = process.argv.slice(2);
 // Kiểm tra nếu có tham số truyền vào
     let startIndex = 0; // lấy tham số đầu tiên
     let endIndex = 0; // lấy tham số thứ hai
+    let mangaName = "";
 if (args.length > 0) {
      startIndex = args[0]; // lấy tham số đầu tiên
      endIndex = args[0]; // lấy tham số thứ hai
+     mangaName = args[0]
 
 }
 async function Run() {
@@ -158,7 +160,8 @@ async function TaskReview(rootFolder, index, apiKeys,url, videoID=" ",IndexApi=0
     console.log("Kết thúc tạo video VN");
 
     console.log("Bắt đầu chuyển văn bản sang "+language);
-    await retry(sendFileToGeminiToTranslateText, [rootFolder, index, apiKeys[IndexApi]], apiKeys.length, apiKeys);
+    console.log("Manga name: "+mangaName)
+    await retry(sendFileToGeminiToTranslateText, [rootFolder, index, apiKeys[IndexApi],mangaName], apiKeys.length, apiKeys);
     console.log("Hoàn thành chuyển văn bản sang "+language);
       
     console.log("Bắt đầu extract mp3 file đã dịch");

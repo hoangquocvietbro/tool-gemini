@@ -76,7 +76,7 @@ async function waitForFilesActive(files) {
   console.log("...all files ready\n");
 }
 
-async function setUpGemini(rootFolder,videoIndex,ApiKey){
+async function setUpGemini(rootFolder,videoIndex,ApiKey,mangaName=''){
 
    apiKey = ApiKey; console.log(apiKey)
    genAI = new GoogleGenerativeAI(apiKey);
@@ -145,9 +145,6 @@ async function setUpGemini(rootFolder,videoIndex,ApiKey){
         ],
       });
       
-
-      let mangaName = "";
-      if(fs.existsSync("./" +rootFolder+`/mangaName.txt`)) mangaName = fs.readFileSync("./" +rootFolder+`/mangaName.txt`,"utf-8");
       let SubText = fs.readFileSync("./" +rootFolder+`/originSub/sub${videoIndex}.json`,"utf-8")
    
       /*
@@ -314,8 +311,8 @@ async function getLastOrSecondLastLine(filePath) {
   });
 }
 
-async function runTranslateText(rootFolder,videoIndex,ApiKey){
-  await setUpGemini(rootFolder,videoIndex,ApiKey);
+async function runTranslateText(rootFolder,videoIndex,ApiKey,mangaName=''){
+  await setUpGemini(rootFolder,videoIndex,ApiKey,mangaName);
   return Promise.resolve;
 }
 module.exports = runTranslateText;
